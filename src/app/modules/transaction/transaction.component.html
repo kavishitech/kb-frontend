@@ -1,0 +1,34 @@
+
+<h2>My Transactions</h2>
+
+
+
+<div routerLink="/transaction/0"><button> Transactions</button></div>
+    <div class="form-check-inline">
+    <button type="button" class="btn btn-primary" (click)="filterBy(1)">Land</button>
+    </div>
+    <div class="form-check-inline">
+    <button type="button" class="btn btn-primary" (click)="filterBy(2)">Crop</button>
+    </div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Expense Type</th>
+        <th>Expense Date</th>
+        <th>Amount</th>
+        <th>Area</th>
+    </tr>
+    <tr *ngFor="let transaction of transactions| transactionTypeFilterPipe: transactionType" routerLink="/transaction/{{transaction.id}}">
+        <td>
+           <div  *ngFor="let transactionReason of transactionReasons | trasactionReasonPipeName:transaction.id"  >{{transactionReason.name}}
+            </div> 
+        </td> <td>  {{transaction.date | date}} 
+
+         </td> <td>  {{transaction.amount}} 
+        </td>
+        <td>{{transaction.type}}</td>
+        
+        
+    </tr>
+
+</table>
+

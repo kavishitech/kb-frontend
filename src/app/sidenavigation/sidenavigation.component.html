@@ -1,0 +1,17 @@
+<div class="sidebar">
+    <a routerLink='/farmers'>Farmers</a>
+    <a href="/crops">Crops</a>
+    <a href="/soils">Soils</a>
+    <a href="/transactionReasons">Transaction Reasons</a>
+    <div *ngIf="farmerId>0">
+      =========================
+    <a href="/lands">My Lands</a>
+
+    <a href="/userCrops">My Crops</a>
+
+    <a href="/transactions">My Transactions</a>
+  </div>
+  </div>
+  <div class="content">
+  <router-outlet></router-outlet>
+  </div>

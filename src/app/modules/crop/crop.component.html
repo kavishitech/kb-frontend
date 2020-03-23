@@ -1,0 +1,20 @@
+
+<h2>Crops</h2>
+<div routerLink="/crop/0"><button> Create Crop</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Name</th>
+        <th>Category</th>
+    </tr>
+    <tr *ngFor="let crop of crops" routerLink="/crop/{{crop.id}}">
+        <td>
+            {{crop.name}} 
+        </td>
+        
+        <td>
+            {{crop.category}}
+        </td>
+        
+    </tr>
+
+</table>

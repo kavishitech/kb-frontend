@@ -1,0 +1,17 @@
+
+<h2>Lands</h2>
+<div routerLink="/soil/0"><button> Create Land</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let soil of soils" routerLink="/soil/{{soil.id}}">
+        <td>
+            {{soil.name}} 
+        </td>
+        
+       
+        
+    </tr>
+
+</table>

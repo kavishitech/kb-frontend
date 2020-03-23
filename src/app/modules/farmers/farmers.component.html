@@ -1,0 +1,26 @@
+<h2>Farmers</h2>
+<div routerLink="/farmer/0"><button> Create Farmer</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Gender</th>
+        <th>Date Of Birth</th>
+    </tr>
+    <tr *ngFor="let farmer of farmers" routerLink="/farmer/{{farmer.id}}">
+        <td>
+            {{farmer.firstName}} {{farmer.middleName}} {{farmer.lastName}}
+        </td>
+        
+        <td>
+            {{farmer.mobileNumber}}
+        </td>
+        <td>
+            {{farmer.gender}}
+        </td>
+        <td>
+            {{farmer.dob | date :'dd MMM yyyy'}}
+        </td>
+    </tr>
+
+</table>

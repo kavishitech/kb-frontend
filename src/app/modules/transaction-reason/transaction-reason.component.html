@@ -1,0 +1,20 @@
+
+<h2>TransactionReasons</h2>
+<div routerLink="/transactionReason/0"><button> Create TransactionReason</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Name</th>
+        <th>Level</th>
+    </tr>
+    <tr *ngFor="let transactionReason of transactionReasons" routerLink="/transactionReason/{{transactionReason.id}}">
+        <td>
+            {{transactionReason.name}} 
+        </td>
+        
+        <td>
+            {{transactionReason.level}}
+        </td>
+        
+    </tr>
+
+</table>

@@ -1,0 +1,20 @@
+
+<h2>My Crops</h2>
+<div routerLink="/userCrop/0"><button> Create Crop</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Crop</th>
+        <th>Area</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let userCrop of userCrops" >
+        <td >
+            <a routerLink="/userCrop/{{userCrop.id}}">{{userCrop.name}} </a>
+        </td>
+        <td>{{userCrop.acres}}.{{userCrop.guntha}} Acres</td>
+        <td><button routerLink="/transaction/crop/{{userCrop.id}}" >Add Expense</button></td>
+        
+    </tr>
+
+</table>
+

@@ -1,0 +1,48 @@
+<div class="container">
+  <div>
+    <h1>Land Form</h1>
+    <form (ngSubmit)="onSubmit()" #landForm="ngForm">
+      <div class="form-group form-check-inline">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="land.name" name="Name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          First Name is required
+        </div>
+      </div>
+
+      <div class="form-group form-check-inline">
+        <label for="soilType">Soil Type:</label>
+        <select class="form-control" id="soilType" [(ngModel)]="land.soilType" name="soilType">
+          <option *ngFor="let soil of soils" value="{{soil.id}}">{{soil.name}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group form-check-inline">
+        <label for="acres">Acres:</label>
+        <input type="number" class="form-control" id="acres" [(ngModel)]="land.acres" name="Acres">
+      </div>
+
+      
+      <div class="form-group form-check-inline">
+        <label for="guntha">Guntha:</label>
+        <input type="number" class="form-control" id="guntha" [(ngModel)]="land.guntha" name="Guntha">
+      </div>
+
+      <div class="form-group form-check-inline">
+        <label for="latitude">Latitude:</label>
+        <input type="text" class="form-control" id="latitude" [(ngModel)]="land.latitude" name="Latitude">
+      </div>
+
+      <div class="form-group form-check-inline">
+        <label for="longitude">Longitude:</label>
+        <input type="text" class="form-control" id="longitude" [(ngModel)]="land.longitude" name="longitude">
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!landForm.form.valid">Submit</button>
+    </form>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,27 @@
+
+<h2>Lands</h2>
+<div routerLink="/land/0"><button> Create Land</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>Name</th>
+        <th>Area</th>
+        <th>Lat/Long</th>
+        <th>Expenses</th>
+    </tr>
+    <tr *ngFor="let land of lands" routerLink="/land/{{land.id}}">
+        <td>
+            {{land.name}} 
+        </td>
+        
+        <td>
+            {{land.acres}} Ac {{land.guntha}} Gu
+        </td>
+        <td>
+            {{land.latitude}}/{{land.longitude}}
+        </td>
+        <td><button routerLink="/transaction/land/{{land.id}}" >Add Expense</button></td>
+
+    </tr>
+
+</table>
+

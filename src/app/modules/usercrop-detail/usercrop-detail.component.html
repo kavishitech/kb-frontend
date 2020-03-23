@@ -1,0 +1,59 @@
+<div class="container">
+    <div>
+      <h1>Crop Form</h1>
+      <form (ngSubmit)="onSubmit()" #userCropForm="ngForm">
+        
+  
+        <div class="form-group form-check-inline">
+            <label for="cropId">Crop:</label>
+            <select class="form-control" id="cropId" [(ngModel)]="userCrop.cropId" name="cropId"  >
+              <option *ngFor="let crop of crops" value="{{crop.id}}" >{{crop.name}}</option>
+            </select>
+          </div>
+
+          
+
+        <div class="form-group form-check-inline">
+          <label for="landId">Land:</label>
+          <select class="form-control" id="landId" [(ngModel)]="userCrop.landId" name="landId">
+            <option *ngFor="let land of lands" value="{{land.id}}">{{land.name}}</option>
+          </select>
+        </div>
+       
+        <div class="form-group form-check-inline">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="userCrop.name" name="name">
+        </div>
+  
+        <div class="form-group form-check-inline">
+          <label for="acres">Acres:</label>
+          <input type="number" class="form-control" id="acres" [(ngModel)]="userCrop.acres" name="Acres">
+        </div>
+  
+        
+        <div class="form-group form-check-inline">
+          <label for="guntha">Guntha:</label>
+          <input type="number" class="form-control" id="guntha" [(ngModel)]="userCrop.guntha" name="Guntha">
+        </div>
+  
+        <div class="form-group form-check-inline">
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="form-control" id="startDate"
+                   [(ngModel)]="userCrop.startDate" name="Start Date">
+          </div>
+
+          <div class="form-group form-check-inline">
+            <label for="status">Status:</label>
+            <input type="text" class="form-control" id="status" required [(ngModel)]="userCrop.status" name="Status" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+              First Name is required
+            </div>
+          </div>
+        
+        <button type="submit" class="btn btn-success" [disabled]="!userCropForm.form.valid">Submit</button>
+      </form>
+    </div>
+  
+  
+  
+  </div>

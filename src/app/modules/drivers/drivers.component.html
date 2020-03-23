@@ -1,0 +1,23 @@
+<h2>Drivers</h2>
+<div routerLink="/detail/0"><button> Create Driver</button></div>
+<table class="table table-bordered">
+    <tr class="thead-light">
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr *ngFor="let driver of drivers" routerLink="/detail/{{driver.id}}">
+        <td>
+            {{driver.firstName}}
+        </td>
+        <td>
+            {{driver.lastName}}
+        </td>
+    </tr>
+
+</table>
+<!-- <ul class="drivers">
+    <li *ngFor="let driver of drivers" [class.selected]="driver === selectedDriver" (click)="onSelect(driver) ">
+    <span class="badge">{{driver.id}}</span> <a routerLink="/detail/{{driver.id}}">{{driver.firstName}}</a></li>
+
+
+</ul> -->
